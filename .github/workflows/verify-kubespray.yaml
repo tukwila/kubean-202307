@@ -14,6 +14,9 @@ jobs:
       spray_short_sha: ${{ steps.output_variables.outputs.spray_short_sha }}
       container_tag: ${{ steps.output_variables.outputs.container_tag }}
     steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - name: output environment variable
       id: output_variables
       run: |
